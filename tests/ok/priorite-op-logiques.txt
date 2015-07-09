@@ -1,0 +1,6 @@
+program test
+var cond : bool;
+var x, y : int;
+{
+    cond = x > 0 and y < 5 or x > 2 and 0 >= 3*5+-2^5^8 or (x <= 1 and x > 3)
+}

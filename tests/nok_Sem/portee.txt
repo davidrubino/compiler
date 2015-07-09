@@ -1,0 +1,19 @@
+program test
+var a, b : int;
+
+function fun1() : void
+var b, c: bool;
+{
+    a = b + c + d;
+    b = 10
+}
+
+function fun2() : void
+var d: int;
+{
+    a = 30 + d
+}
+
+{
+    a = b + c + d
+}

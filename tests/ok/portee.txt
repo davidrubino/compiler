@@ -1,0 +1,28 @@
+program test
+    var a, b, c : int;
+
+    function fun1(a : int) : void
+    var b : int;
+    {
+        b = a + c;
+        c = a + b;
+
+        write "fun1 : a = "; write a;
+        write " b = "; write b;
+        write " c = "; writeln c
+    }
+{
+    a = 10;
+    b = 20;
+    c = 30;
+    fun1(50);
+
+    write "prgm : a = "; write a;
+    write " b = "; write b;
+    write " c = "; writeln c
+}
+
+/* sortie attendue :
+fun1 : a = 50 b = 80 c = 130
+prgm : a = 10 b = 20 c = 130
+*/

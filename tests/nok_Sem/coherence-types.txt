@@ -1,0 +1,55 @@
+program test
+
+var myInt : int;
+var myBool : bool;
+var x : int;
+
+function f1(a : int) : int
+{
+    return true
+}
+
+function f2(ref a : int) : void
+{
+    return 42
+}
+
+function f3() : int
+{
+    write "test"
+}
+
+{
+    myInt = 42;
+    myInt = true;
+    myBool = true;
+    myBool = 42;
+
+    if (42 or false) then {
+        write "test"
+    }
+
+    if (false) then {
+        write "test"
+    }
+
+    if (myInt) then {
+        write "test"
+    }
+
+    if (myBool) then {
+        write "test"
+    }
+
+    f1();
+    f1(true);
+    f1(2);
+    f1(2, true);
+    f2(42);
+    f2(myInt);
+    f2(myBool);
+    myInt = f2(myInt);
+
+    myInt = 42 - 5 + false - true;
+    myBool = 42 == true
+}

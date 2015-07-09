@@ -1,0 +1,24 @@
+/* toto */
+program essai
+	var i, j, maximum: int;
+	var Tval : array[3..3, 0..5] of int;
+
+	function maxTAB (t: array[3..3, 0..5] of int) : int
+		var i, j, max: int;
+	{
+		i = -3;
+		j = 0;
+		max = t[3, 0];
+		while i <= 3 do {
+			while j <= 5 do {
+				iff t[i, j] > max then max = t[i, j]
+				j = j + 1
+			}
+			i = i + 1
+		}
+
+		return max
+	}
+{
+	toto()
+}

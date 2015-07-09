@@ -1,0 +1,12 @@
+program readtest
+var x : string;
+var n : int;
+{
+    writeln "Saisir une chaine: ";
+    read x;
+    write "Chaine saisie : "; writeln x;
+
+    writeln "Saisir un nombre: ";
+    read n;
+    write "Nombre saisi : "; writeln n;
+}

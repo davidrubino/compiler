@@ -1,0 +1,10 @@
+program chaines
+var x : string;
+{
+    x = "str1";
+    writeln x;
+    x = "str2";
+    writeln x;
+    writeln true;
+    writeln false;
+}

@@ -1,0 +1,53 @@
+program tableaux
+var t : array[-1..2, -3..0, 1..2] of int;
+var i, j, k: int;
+var n : int;
+
+function add1(t : array[-1..2, -3..0, 1..2] of int) : void
+{
+    t[-1, -3, 1] = 1337;
+}
+
+{
+    i = -1;
+    n = 0;
+
+    while (i <= 2) do {
+        j = -3;
+        while (j <= 0) do {
+            k = 1;
+            while (k <= 2) do {
+                t[i, j, k] = n;
+                write "["; write i; write ", "; write j; write ", "; write k; write "] = ";
+                writeln t[i, j, k];
+                k = k + 1;
+                n = n + 1;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+
+    writeln;
+    writeln "------";
+    writeln;
+
+    i = 2;
+    while (i >= -1) do {
+        j = 0;
+        while (j >= -3) do {
+            k = 2;
+            while (k >= 1) do {
+                write "["; write i; write ", "; write j; write ", "; write k; write "] = ";
+                writeln t[i, j, k];
+                k = k - 1;
+            }
+            j = j - 1;
+        }
+        i = i - 1;
+    }
+
+    add1(t);
+    writeln t[-1, -3, 1];
+}

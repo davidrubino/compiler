@@ -1,0 +1,11 @@
+program test
+var x, i: int;
+{
+    i = 0;
+    if i == 0 then
+        if x == 42 then 
+            x = 32
+        else
+            write "non !"
+
+}

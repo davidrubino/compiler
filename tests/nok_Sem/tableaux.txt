@@ -1,0 +1,11 @@
+program tableaux
+var t1 : array[-1..2, 3..4] of int;
+var t2 : array[5..0] of int;
+{
+    t1[0] = 42;
+    t1[0, 5] = 43;
+    t1[0, 5, 10] = 50;
+    t1[1, false] = 5;
+
+    t2[0] = 5;
+}

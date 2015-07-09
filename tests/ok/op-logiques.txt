@@ -1,0 +1,5 @@
+program test
+var x : bool;
+{
+    x = 1 > 2
+}

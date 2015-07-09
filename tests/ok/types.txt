@@ -1,0 +1,9 @@
+program types
+var aint : int;
+var astring : string;
+var anarray : array[0..9] of int;
+
+{
+    aint = 42;
+    astring = "foo"
+}

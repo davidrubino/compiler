@@ -1,0 +1,10 @@
+program ifeelthepower
+var x : int;
+{
+    writeln 2^10;
+    writeln -2^10;
+    writeln (-2)^10;
+    writeln 2^3^2;
+    writeln 2^(3^2);
+    writeln (2^3)^2;
+}

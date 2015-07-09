@@ -1,0 +1,9 @@
+program test
+var x : int;
+{
+    x = 3;
+    if (x > 2) then
+        write "oui"
+    else
+        write "non"
+}

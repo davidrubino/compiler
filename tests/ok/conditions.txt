@@ -1,0 +1,52 @@
+program conditions
+var x : int;
+{
+    x = 0;
+
+    while (x <= 3) do {
+        write "x = "; writeln x;
+
+        write " == 2 : ";
+        writeln (x == 2);
+
+        write " <= 2 : ";
+        writeln (x <= 2);
+
+        write "  < 2 : ";
+        writeln (x < 2);
+
+        write " >= 2 : ";
+        writeln (x >= 2);
+
+        write "  > 2 : ";
+        writeln (x > 2);
+
+        writeln;
+
+        x = x + 1
+    }
+
+    write "true == true : ";
+    writeln (true == true);
+
+    write "true == false : ";
+    writeln (true == false);
+
+    write "true and false : ";
+    writeln (true and false);
+
+    write "true and true : ";
+    writeln (true and true);
+
+    write "true or false : ";
+    writeln (true or false);
+
+    write "false or false : ";
+    writeln (false or false);
+
+    write "not true : ";
+    writeln (not true);
+
+    write "not false : ";
+    writeln (not false);
+}

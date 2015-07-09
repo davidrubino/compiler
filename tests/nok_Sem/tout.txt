@@ -1,0 +1,52 @@
+/* Ce programme montre toutes les erreurs sémantiques générées par notre compilateur */
+
+program erreurs
+var myvoid : void;                        /* variable de type void */
+var dup, dup : bool;                      /* double déclaration */
+var dup : int;
+var array1 : array[1..0] of int;          /* bornes invalides */
+var array2 : array[-1..2, 0..3] of int;   /* ok */
+var int1, int2, int3 : int;
+var bool1, bool2, bool3 : int;
+
+function A() : void { return 10 }         /* Types de retour */
+function B() : int { write 42 }
+function C() : int { return false }
+
+function C() : void { }                   /* double déclaration */
+function dup() : void { }                 /* conflit avec la variable */
+
+function D(a : int) : int
+var a : int;                              /* double déclaration */
+var a : bool; { return a * a }
+
+function F(ref b : int) : void { b = 42; int1 = 2 }
+
+{
+    /* Incohérences de types */
+    int1 = true;
+    bool1 = 10;
+
+    int1 = 1 + true;
+    bool1 = false or 1;
+    bool1 = -true;
+
+    int1 = bool1;
+
+    /* Fonctions */
+    int1 = A();                           /* expression void */
+    int1 = B(42);                         /* argument en trop */
+    D();                                  /* argument manquant */
+    D(true);                              /* argument de type incorrect */
+    F(42);                                /* référence sur constante */
+    F(int1 + int2);
+
+    /* Tableaux */
+    array1 = 42;                          /* tableau != entier */
+    int1[0] = 42;                         /* non indexable */
+    int1 = array1[-1, 0];                 /* indice superflu */
+    int1 = array2[0];                     /* indice manquant */
+    int1 = array2[false, 0];              /* indice non entier */
+
+    if (42) then { } else { }             /* test non booléen */
+}

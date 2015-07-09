@@ -1,0 +1,39 @@
+program references
+var xx, yy : int;
+var tt : array[1..5] of int;
+var s : string;
+
+function inc(ref x : int, y : int) : void {
+    x = x + 1;
+    y = y + 1;
+    write "fin inc : x = "; write x;
+    write " y = "; writeln y;
+}
+
+function changeMyArray(t : array[1..5] of int) : void {
+    t[0] = 42;
+}
+
+
+function changeMyString(ref s : string) : void {
+    s = "yes";
+}
+
+{
+    xx = 0;
+    yy = 0;
+
+    inc(xx, yy);
+    write "apres inc : xx = "; write xx; write " yy = "; writeln yy;
+
+    inc(xx, yy);
+    write "apres inc : xx = "; write xx; write " yy = "; writeln yy;
+
+    tt[0] = 10;
+    changeMyArray(tt);
+    writeln tt[0];
+
+    s = "no way";
+    changeMyString(s);
+    writeln s;
+}

@@ -1,0 +1,21 @@
+** Compilateur Leac **
+** Mai 2014 **
+
+== Utilisation ==
+
+Compilation simple :
+    java -jar leacc.jar fichier.leac fichier_sortie.src
+
+Compilation + assemblage (out.iup) :
+    java -jar leacc.jar -l fichier.leac fichier_sortie.src
+
+Compilation + assemblage + exécution :
+    java -jar leacc.jar -x fichier.leac fichier_sortie.src
+
+Options supplémentaires :
+    -a : affichage de l'AST
+    -s : affichage de l'arbre syntaxique
+    -t : affichage de la table des symboles
+    -p : affichage du code généré sur la sortie standard
+
+Si le fichier de sortie n'est pas précisé, out.src sera utilisé.

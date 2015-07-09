@@ -1,0 +1,61 @@
+/* Ce programme imprime le texte de la chanson "99 bottles of beer".
+ * Il est volontairement rendu complexe pour tester le compilateur
+ */
+
+program ninetyninebottles
+var bottles : int;
+
+function bottlesofbeer(n: int, title: bool, onthewall: bool) : void
+{
+    if (n == 0) then {
+        if (title) then
+            write "No more";
+        else
+            write "no more";
+    } else {
+        write n;
+    }
+
+    if (n != 1) then
+        write " bottles of beer";
+    else
+        write " bottle of beer";
+
+    if (onthewall) then 
+        write " on the wall";
+}
+
+function firstsentence(n: int) : void
+{
+    bottlesofbeer(n, true, true);
+    write ", ";
+    bottlesofbeer(n, false, false);
+    writeln ".";
+}
+
+function secondsentence(ref n: int) : void
+{
+    if (n == 0) then
+        write "Go to the store and buy some more, ";
+    else
+        write "Take one down and pass it around, ";
+    
+    n = n - 1;
+    if (n < 0) then n = 99;
+    bottlesofbeer(n, false, true);
+    writeln "."
+}
+
+{
+    bottles = 99;
+
+    while (bottles >= 0) do {
+        firstsentence(bottles);
+        secondsentence(bottles);
+        writeln;
+
+        if (bottles == 99) then {
+            bottles = -1;
+        }
+    }
+}
